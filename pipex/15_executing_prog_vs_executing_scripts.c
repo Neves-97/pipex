@@ -7,6 +7,10 @@
 // exec functions will replace other fucntions 
 // example after exclp printf doesnt appear on console
 
+// exec executes a executable not a command line doesnt
+// work passing more parameters to 
+// int err = execlp("ping", "ping", "-c", "3", "movies7.com", NULL || . . );
+
 int main (int ac, char **av)
 {
 	int pid = fork();
