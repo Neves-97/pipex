@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:00:41 by neves             #+#    #+#             */
-/*   Updated: 2023/05/25 13:34:42 by roda-min         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:59:18 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 
 // main
 
-void init_struct(t_pipex **buff);
+void	init_struct(t_pipex **buff);
 void	execute_pipeline(t_pipex *pipex, char *argv[], char *envp[]);
 
 // free

@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:17:15 by neves             #+#    #+#             */
-/*   Updated: 2023/05/25 13:46:51 by roda-min         ###   ########.fr       */
+/*   Updated: 2023/05/25 13:58:55 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,6 @@ void	free_split(char **split)
 	}
 	free(split);
 }
-
-// void	parent_free(t_pipex *pipex)
-// {
-// 	char	**paths;
-
-// 	close(pipex->infile);
-// 	close(pipex->outfile);
-// 	paths = pipex->cmd_paths;
-	
-// 	free(pipex->cmd_paths);
-// }
 
 void	child_free(t_pipex *pipex)
 {
