@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipex.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:00:41 by neves             #+#    #+#             */
-/*   Updated: 2023/05/22 20:07:30 by neves            ###   ########.fr       */
+/*   Updated: 2023/05/25 13:34:42 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 # include <stdio.h>
 # include <sys/wait.h>
 # include <fcntl.h>
+// # define malloc(x) 0
+# define FORK "Unable to fork"
+# define MEMORY "Failure allocating memory"
+# define DUP2 "dup2 error"
+# define INFILE "Failure opening input file"
+# define OUTFILE "Failure opening output file"
 
 typedef struct s_pipex
 {
@@ -32,19 +38,39 @@ typedef struct s_pipex
 	pid_t	pid2;
 }	t_pipex;
 
+// error
+
 int		msg(char *err);
+void	msg_error(char *err);
+void	err_handler(t_pipex *pipex, char *err_msg);
+
+// utils
+
 size_t	ft_strlen(const char *str);
 char	*ft_strcpy(char *s1, char *s2);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *str1, const char *str2, size_t n);
-char	*find_path(char **envp);
+
+// main
+
+void init_struct(t_pipex **buff);
 void	execute_pipeline(t_pipex *pipex, char *argv[], char *envp[]);
+
+// free
+
 void	child_free(t_pipex *pipex);
 void	parent_free(t_pipex *pipex);
-void	msg_error(char *err);
+void	free_all(t_pipex *pipex);
+
+// children
+
 void	first_child(t_pipex *pipex, char *argv[], char *envp[]);
 void	second_child(t_pipex *pipex, char *argv[], char *envp[]);
+
+// paths
+
 char	*get_cmd(char **paths, char *cmd);
+char	*find_path(char **envp);
 
 #endif
 

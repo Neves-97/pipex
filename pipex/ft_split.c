@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:33:10 by neves             #+#    #+#             */
-/*   Updated: 2023/05/22 19:33:43 by neves            ###   ########.fr       */
+/*   Updated: 2023/05/25 09:09:31 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-static	int	count_words(const char *str, char c)
+static int	count_words(const char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -33,7 +33,7 @@ static	int	count_words(const char *str, char c)
 	return (i);
 }
 
-static	char	*word_dup(const char *str, int start, int finish)
+static char	*word_dup(const char *str, int start, int finish)
 {
 	char	*word;
 	int		i;
