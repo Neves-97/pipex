@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:42:51 by neves             #+#    #+#             */
-/*   Updated: 2023/05/25 13:58:10 by roda-min         ###   ########.fr       */
+/*   Updated: 2023/05/28 08:59:35 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	init_struct(t_pipex **buff)
 void	execute_pipeline(t_pipex *pipex, char *argv[], char *envp[])
 {
 	if (pipe(pipex->pipe_fd) < 0)
-		msg_error("Error: Failed to create pipe.");
+		err_handler(pipex, PIPE);
 	pipex->path = find_path(envp);
 	pipex->cmd_paths = ft_split(pipex->path, ':');
 	if (!pipex->cmd_paths)

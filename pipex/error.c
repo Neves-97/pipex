@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:04:35 by neves             #+#    #+#             */
-/*   Updated: 2023/05/22 19:16:51 by neves            ###   ########.fr       */
+/*   Updated: 2023/05/28 08:54:19 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,3 @@ int	msg(char *err)
 	write(2, err, ft_strlen(err));
 	return (1);
 }
-
-void	msg_error(char *err)
-{
-	perror(err);
-	exit(1);
-}
-
-// /dev/random
-// command that breaks if waitpid not right.

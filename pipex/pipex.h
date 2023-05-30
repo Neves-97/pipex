@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 20:00:41 by neves             #+#    #+#             */
-/*   Updated: 2023/05/25 13:59:18 by roda-min         ###   ########.fr       */
+/*   Updated: 2023/05/28 08:57:28 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 # include <stdio.h>
 # include <sys/wait.h>
 # include <fcntl.h>
-// # define malloc(x) 0
+
 # define FORK "Unable to fork"
 # define MEMORY "Failure allocating memory"
 # define DUP2 "dup2 error"
 # define INFILE "Failure opening input file"
 # define OUTFILE "Failure opening output file"
+# define PIPE "Failure creating pipe"
 
 typedef struct s_pipex
 {
@@ -73,6 +74,3 @@ char	*get_cmd(char **paths, char *cmd);
 char	*find_path(char **envp);
 
 #endif
-
-// View list of process in system 
-// top or ps

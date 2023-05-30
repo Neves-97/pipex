@@ -6,7 +6,7 @@
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 19:17:15 by neves             #+#    #+#             */
-/*   Updated: 2023/05/25 13:58:55 by roda-min         ###   ########.fr       */
+/*   Updated: 2023/05/28 08:58:20 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	child_free(t_pipex *pipex)
 
 void	err_handler(t_pipex *pipex, char *err_msg)
 {
-	printf("Error: %s\n", err_msg);
+	write(2, err_msg, ft_strlen(err_msg));
 	free_all(pipex);
 	exit(EXIT_FAILURE);
 }
